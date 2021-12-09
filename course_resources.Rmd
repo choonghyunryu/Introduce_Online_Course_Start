@@ -1,0 +1,83 @@
+---
+title: "학습 리소스"
+description: |
+  **온라인 대화용 코스** 개발을 위한 관련 학습 리소스  
+site: distill::distill_website
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# 온라인 대화용 코스 개발을 위한 관련 학습 리소스  
+     
+## learnr 리소스
+* Introducing learnr
+     + [https://www.rstudio.com/blog/introducing-learnr/](https://www.rstudio.com/blog/introducing-learnr/){target="_blank"}
+     + learnr 소개 블로그
+     
+* Learning learnr
+     + [https://education.rstudio.com/blog/2020/07/learning-learnr/](https://education.rstudio.com/blog/2020/07/learning-learnr/){target="_blank"}
+     + learnr 소개 블로그
+     
+* Teach R with learnr: a powerful tool for remote teaching
+     + [https://education.rstudio.com/blog/2020/05/learnr-for-remote/](https://education.rstudio.com/blog/2020/05/learnr-for-remote/){target="_blank"}
+     + learnr 소개 블로그    
+     
+* CRAN learnr 홈페이지
+     + [https://cran.r-project.org/web/packages/learnr/index.html](https://cran.r-project.org/web/packages/learnr/index.html){target="_blank"}
+     + learnr CRAN 홈페이지
+
+* github learnr 홈페이지
+     + [https://github.com/rstudio/learnr](https://github.com/rstudio/learnr){target="_blank"}
+     + learnr github 홈페이지
+     
+* **learnr 홈페이지** 
+     + [https://rstudio.github.io/learnr/](https://rstudio.github.io/learnr/){target="_blank"}
+     + learnr pkgdown 홈페이지
+     
+
+## 이네스 몬타니의 코스 플랫폼 리소스
+
+* (Re)building the R Bootcamp and generating R tutorials
+     + [https://education.rstudio.com/blog/2020/03/r-bootcamp/](https://education.rstudio.com/blog/2020/03/r-bootcamp/){target="_blank"}
+     + Teach R with Interactive Courses by Ted Laderas, Jessica Minnier, Florencia D’Andrea
+     
+* Teach R with Interactive Courses
+     + [https://education.rstudio.com/blog/2020/05/teach-interactive-course/](https://education.rstudio.com/blog/2020/05/teach-interactive-course/){target="_blank"}
+     + Teach R with Interactive Courses by Julia Silge
+     
+* **Online course starter: R** 
+     + [https://github.com/ines/course-starter-r](https://github.com/ines/course-starter-r){target="_blank"}
+     + 이네스 몬타니의 코스 플랫폼 R 프로젝트
+     
+* **R Bootcamp 소스**
+     + [https://github.com/laderast/RBootcamp](https://github.com/laderast/RBootcamp){target="_blank"}
+     + R Bootcamp 코스 소스
+     
+* **R Bootcamp**
+     + [https://r-bootcamp.netlify.app/](https://r-bootcamp.netlify.app/){target="_blank"}
+     + R Bootcamp 코스
+     + Transfer from 데이터캠프
+     
+* **Supervised Machine Learning: Case Studies in R 소스**
+     + [https://github.com/juliasilge/supervised-ML-case-studies-course](https://github.com/juliasilge/supervised-ML-case-studies-course){target="_blank"}
+     + Supervised Machine Learning 코스 소스
+* **Supervised Machine Learning: Case Studies in R**
+     + [https://supervised-ml-course.netlify.app/](https://supervised-ml-course.netlify.app/){target="_blank"}
+     + Supervised Machine Learning 코스
+     
+* **Supervised Machine Learning: Case Studies in R 소스**
+     + [https://github.com/juliasilge/supervised-ML-case-studies-course](https://github.com/juliasilge/supervised-ML-case-studies-course){target="_blank"}
+     + Supervised Machine Learning 코스 소스
+* **GAMs in R**
+     + [https://noamross.github.io/gams-in-r-course/](https://noamross.github.io/gams-in-r-course/){target="_blank"}
+     + Generalized Additive Models in R 코스     
+     
+     
+          
+     
