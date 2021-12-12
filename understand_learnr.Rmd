@@ -1,0 +1,39 @@
+---
+title: "learnr 코스 플랫폼 이해"
+description: |
+  learnr 코스 플랫폼 이해
+site: distill::distill_website
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 3  
+author:
+  - name: 유충현 
+    url: https://choonghyunryu.github.io/
+    affiliation: Tidyverse Korea
+date: 2021-12-10     
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      collapse = FALSE,
+                      fig.align = "center")
+library(shiny)
+library(htmltools)
+
+xaringanExtra :: use_panelset()
+```
+
+
+```{r tidyverse, echo=FALSE, out.width = "20%"}
+knitr::include_graphics("img/learnr_logo.png")
+```
+
+```{r, preface, echo=FALSE}
+div(class = "preface", 
+    h4("들어가기"),
+    "TBD")
+```
+

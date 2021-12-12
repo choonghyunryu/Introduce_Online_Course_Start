@@ -1,0 +1,30 @@
+name: "온라인 대화형 코스 플랫폼"
+title: "온라인 대화형 코스 플랫폼 소개"
+description: |
+  My Website
+output_dir: "docs"
+navbar:
+  right:
+    - text: "개요"
+      href: index.html
+    - text: "learnr 코스 플랫폼 이해"
+      href: understand_learnr.html
+    - text: "이네스 코스 플랫폼 이해"
+      href: understand_ines.html
+    - text: "이네스 코스 개발하기"
+      menu:
+        - text: "코스 개발환경 구축하기"
+          href: dev_infra.html
+        - text: "코스 템플리트 실행하기"
+          href: run_course.html          
+        - text: "코스 커스트마이징하기"
+          href: custom_course.html                 
+        - text: "코스 서비스 배포하기"
+          href: deploy_course.html      
+    - text: "Resources"        
+      href: course_resources.html
+output: 
+  distill::distill_article:
+    theme: theme.css
+    includes:
+      after_body: footer.html       
