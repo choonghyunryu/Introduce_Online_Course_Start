@@ -61,21 +61,35 @@ div(class = "preface",
 
 ### Binder 연결정보 변경
 
-코스 컨텐츠의 프론트 엔드(Front-End)는 개츠비 기반으로 구현되었습니다. 그러나 핸즈온을 위한 R 스크립트의 실행, 즉 백 엔드는(Back-End) R이 설치된 환경에서 실행됩니다. 이 환경은 Binder(mybinder.org)에서 도커 기반으로 구성됩니다. 이 구성을 다음과 같이 meta.json에 정의합니다.
+코스 컨텐츠의 프론트 엔드(Front-End)는 Gatsby 기반으로 구현되었습니다. 그러나 핸즈온을 위한 R 스크립트의 실행, 즉 백 엔드는(Back-End) R이 설치된 환경에서 실행됩니다. 이 환경은 Binder(mybinder.org)에서 도커 기반으로 구성됩니다. 이 구성을 다음과 같이 meta.json에 정의합니다.
 
-"juniper" 섹션에서 변경이 필요한 "repo"와 "branch"만 변경하면 됩니다.  
+"juniper" 섹션에서 변경이 필요한 "repo"를 변경하면 됩니다.  
 
 ```{r, eval=FALSE, echo=TRUE}
     "juniper": {
         "repo": "choonghyunryu/course-starter-dlookr",
-        "branch": "master",
+        "branch": "binder",
         "lang": "r",
         "kernelType": "ir",
         "debug": false
     }
 ```
 
-개발한 Gihthub 코스 컨텐츠의 Github 리파지토리를 기술합니다. 필자는 템플리트 프로젝트를 "choonghyunryu/course-starter-dlookr"에 저장했기 때문이 이네스의 리파지토리에서 대체합니다. 그리고 branch는 "binder"에서 "master"로 대체합니다.
+개발한 Gihthub 코스 컨텐츠의 Github 리파지토리를 기술합니다. 필자는 템플리트 프로젝트를 'choonghyunryu/course-starter-dlookr'에 저장했기 때문이 이네스의 리파지토리에서 대체합니다. 그리고 'branch'는 'binder'를 유지합니다.
+
+
+```{r, sol-1, echo=FALSE}
+div(class = "bg-orange", 
+    h4(icon("lightbulb", style = "margin-right: 5px;"), 
+       "솔루션", style = "margin-bottom: 10px; margin-top: 0px;"), 
+    "백 엔드 서비스를 위해서 Binder에 연결할 binder 브랜치를 만듭니다. 그리고 프론트 엔드를 위한 브랜치는 master를 사용합니다. 그 이유는 백 엔드는 변경할 일이 없지만, 프론트 엔드는 컨텐츠를 개발하면서 브렌치가 자주 업데이트될 것입니다. 그럴때마다 Binder에서 도커가 컨테이너를 강제로 재 생성하는 오버헤드가 발생합니다. master와 binder 브랜치를 분리하는 이유입니다.")
+```
+
+<br>
+
+"kernelType"의 "ir"은 IRKernel[^1]을 의미합니다. 이 커널은  RStudio 없이 Jupyter 환경에서 R을 실행할 수 있는 커널입니다. 
+
+[^1]: Native R kernel for Jupyter (https://github.com/IRkernel/IRkernel)
 
 ## Binder 컨테이너 설정
 
@@ -122,6 +136,38 @@ install.packages("dlookr")
 ## Github에 코스 컨텐츠 배포하기
 Github에 코스 소스를 올리는 작업부터 배포작업이 시작됩니다.
 
+### Github 배포 전략
+이네스 코스는의 Github 브랜치는 앞서 Binder 연결정보 변경에서 설명한 대로, 다음 그림과 같이 2개로 배포합니다.[^2]
+
+[^2]: https://github.com/ines/course-starter-r/tree/master 이미지와 본문 참고
+
+```{r repo, echo=FALSE, out.width = "80%"}
+knitr::include_graphics("img/repo.png")
+```
+
+<br>
+
+#### master 브랜치 리파지토리
+프론트 엔드를 담당할 브랜치 리파지토리입니다. Gatsby Javascript 프레임워크를 사용하여 빌드할 페이지로 Netlify에 서비스될 리파지토리입니다. Gatsby는 컨텐츠를 페이지에 랜더링하고, exercises의 코드를 Binder에 보내고 그 결과를 받아서 화면에 처리합니다.
+
+master 브랜치 리파지토리에서 Netlify(Gatsby Javascript)가 처리하는 부분은 다음과 같습니다.
+
+* exercises/solutions/tests
+* chapter.md 파일
+* slides (reveal.js 이용)
+
+#### binder 브랜치 리파지토리
+백 엔드를 담당할 브랜치 리파지토리입니다. Binder에서 도커 컨테이너로 만들어집니다. 브랜치가 업데이트될 때마다 Binder가 컨테이너를 강제로 빌드합니다.
+
+master 브랜치를 Binder와 연결하면 chapter.md 등 컨텐츠들이 수정될 때마가 컨테이너가 다시 빌드됩니다. (Binder가 컨테이너를 빌드하는 작업은 컨테이너에 이미지를 설치하고 소스를 컴파일하는 과정이기 때문에 5~10분 정도의 시간이 소요됩니다.)  그래서 독립적인 binder 브랜치를 만듭니다.
+
+binder 브랜치 리파지토리에서 Binder가 처리하는 부분은 다음과 같습니다.
+
+* data 디렉토리의 데이터 셋
+* binder 디렉토리의 설치 설정 파일
+     + install.R
+     + runtime.txt
+
 ### 사전작업
 
 Node.js 패키지를 설치하면서 생성한 package-lock.json 파일을 삭제해서 Github의 리파지토리에서도 삭제토록 합니다. 그리고 여러 작업 과정에서 신규로 생성된 파일 중에서 Github에 올려서는 안될 파일은 이미 이네스가  **.gitignore** 파일에 등록되어서 신경쓰지 않아도 됩니다.
@@ -152,7 +198,7 @@ Node.js 패키지를 설치하면서 생성한 package-lock.json 파일을 삭�
     "testTemplate": "success <- function(text) {\n    cat(paste(\"\\033[32m\", text, \"\\033[0m\", sep = \"\"))\n}\n\n.solution <- \"${solutionEscaped}\"\n\n${solution}\n\n${test}\ntryCatch({\n    test()\n}, error = function(e) {\n    cat(paste(\"\\033[31m\", e[1], \"\\033[0m\", sep = \"\"))\n})",
     "juniper": {
         "repo": "choonghyunryu/course-starter-dlookr",
-        "branch": "master",
+        "branch": "binder",
         "lang": "r",
         "kernelType": "ir",
         "debug": false
@@ -188,7 +234,7 @@ This course approaches data diagnosis, EDA, transformation learning using:
 The interactive course site is built on the amazing framework created by [Ines Montani](https://ines.io/), originally built for her [spaCy course](https://course.spacy.io).  The front-end is powered by
 [Gatsby](http://gatsbyjs.org/) and the back-end code execution uses [Binder](https://mybinder.org).
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/choonghyunryu/course-starter-dlookr/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/choonghyunryu/course-starter-dlookr/binder)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d47e6b80-e1a0-42c6-9633-8aa5d6d11ab2/deploy-status)](https://app.netlify.com/sites/course-starter-dlookr/deploys)
 
 To learn more about building a course on this framework, see Ines's starter repos for making courses in [Python](https://github.com/ines/course-starter-python) and [R](https://github.com/ines/course-starter-r), and her explanation of how the framework works at [the original course repo](https://github.com/ines/spacy-course#-faq). 
@@ -231,7 +277,7 @@ knitr::include_graphics("img/binder-setup.png")
 그리고 공유할 Binder 다음 URL을 복사(메모)해 놓습니다. 
 
 ```{r, eval=FALSE, echo=TRUE}
-https://mybinder.org/v2/gh/choonghyunryu/course-starter-dlookr/master
+https://mybinder.org/v2/gh/choonghyunryu/course-starter-dlookr/binder
 ```
 
 <br>
@@ -308,7 +354,7 @@ knitr::include_graphics("img/set-netflity.png")
 
 <br>
 
-**branch**에는 **'master'**를 선택합니다. 그리고, 개츠비를 빌드할 설정은 netflity에서 설정한 기본 값을 그대로 사용합니다.
+**branch**에는 **'master'**를 선택합니다. 그리고, Gatsby를 빌드할 설정은 netflity에서 설정한 기본 값을 그대로 사용합니다.
 
 **중요한 것은 이네스의 코스 플랫폼이 3년 전에 만든 것이라 Node.js의 버전을 그 시점의 버전으로 설정하지 않으면 빌드 시 오류가 발생합니다.**
 

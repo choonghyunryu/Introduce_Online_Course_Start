@@ -1,7 +1,7 @@
 ---
 title: "이네스 코스 플랫폼 이해"
 description: |
-  이네스 코스 플랫폼 이해
+  이네스 코스 플랫폼의 구성과 매커니즘을 이해합니다.
 site: distill::distill_website
 output:
   distill::distill_article:
@@ -11,7 +11,7 @@ author:
   - name: 유충현 
     url: https://choonghyunryu.github.io/
     affiliation: Tidyverse Korea
-date: 2021-12-10     
+date: 2021-12-13 
 ---
 
 ```{r setup, include=FALSE}
@@ -28,12 +28,187 @@ library(htmltools)
 xaringanExtra :: use_panelset()
 ```
 
-```{r tidyverse, echo=FALSE, out.width = "20%", eval=FALSE}
-knitr::include_graphics("img/markdown.png")
+```{r ines, echo=FALSE, out.width = "25%", eval=TRUE}
+knitr::include_graphics("img/ines.jpeg")
 ```
 
 ```{r, preface, echo=FALSE}
 div(class = "preface", 
     h4("들어가기"),
-    "TBD")
+    "오픈소스 생태계는 살아 있습니다. 어쩌면 나눔 시장과 같습니다.", br(),
+    "필요한 것은 어느 곳에 있기 마련입니다. 때로는 그것을 찾기 어려울 수 있지만요.", br(),
+    "이네스가 만든 코스 플랫폼도 그 중 하나가 아닐까요? 어쩌면 그렇게 DataCamp와 유사하게 구현해 놓았을까요.", br(),
+    "여러분은 이네스가 펼쳐 놓은 자리에서 코스 플랫폼을 무료로 득템할 수 있는 기회를 얻으셨습니다.")
 ```
+
+## 이네스 코스 플랫폼 이해
+
+### 이네스 코스 플랫폼의 명명
+
+[이네스 몬타니](https://ines.io/){target="_blank"}는 인공지능과 자연어 처리 기술을 연구하는 소프트웨어 개발자이자 [Explosion](https://explosion.ai/){target="_blank"}의 공동 설립자이자 CEO입니다.
+
+이네스 코스 플랫폼은 데이터캠프와 결별한 코스 컨텐츠 프로바이더들 중의 이네스 몬타니(Ines Montani)가 개발한 코스 플랫폼입니다. 플랫폼의 고유 명칭이 없기 때문에 편의상 **이네스 코스 플랫폼**이라 부르겠습니다.
+
+### 이네스 코스 플랫폼 UI/UX
+
+이네스 코스 플랫폼의 UI/UX는 DataCamp와 유사합니다. DataCamp에서 구동되는 코스 플랫폼을 포팅한 것이기 때문에 마치 DataCamp 클론처럼 유사한 기능으로 구성되어 있습니다.
+
+개인적으로는 learnr의 UI/UX보다 좀더 친숙해서, 상대적으로 끌리는 플랫폼입니다.
+
+### 이네스 코스 플랫폼 적용 코스
+
+* R Bootcamp
+  - [https://r-bootcamp.netlify.app/](https://r-bootcamp.netlify.app/){target="_blank"}
+  - Ted Laderas and Jessica Minnier
+* Supervised Machine Learning: Case Studies in R
+  - [https://supervised-ml-course.netlify.app/](https://supervised-ml-course.netlify.app/){target="_blank"}
+  - Julia Silge
+
+## 이네스 코스 플랫폼 구조
+
+### 이네스 코스 플랫폼의 구조
+
+다음 삽화는 이네스가 제시한 플랫폼의 구조[^1]입니다.
+
+[^1]: https://user-images.githubusercontent.com/3315629/60834090-b49d5980-a174-11e9-9d69-966084ba97b9.png
+
+![이네스 코스 플랫폼의 구조](img/ines-arch.png){width=100% height=100%}
+
+### 서버와 클라이언트의 상호 작용
+
+웹 어플리케이션에서의 UI/UX를 담당하는 **프론트 엔드 부분의 클라이언트**는 **Gastby** JavaScript를 사용합니다. 코스를 위한 강의 슬라이드와 연습문제, 퀴즈 등의 처리는 Gastby가 담당합니다. 엄밀히 말하면 슬라이드는 **reveal.js**가 담당합니다.
+
+**백 엔드의 서버 영역**은 **Binder**를 사용합니다. Binder는 연습문제인 R 스크립트를 실행한 후 결과를 프론트 엔드인 Gastby에 전달해 줍니다.
+
+### Juniper
+
+이네스는 Jupyter 커널을 사용하여 Binder 컨테이너와의 통신을 처리하기 위해 **Juniper**라고 하는 Gatsby용 JavaScript 플러그인을 개발했습니다. 
+
+Juniper는 **R 스크립트를 Binder의 도커 컨테이너에 보내 스크립트를 실행**하고, **실행 결과의 출력과 시각화 이미지를 수신**하는 작업을 수행합니다.
+
+
+## Gatsby
+
+**정적 사이트(static site)**는 HTML, CSS, JavaScript로만 만들어진 사이트를 의미합니다. R/데이터 분석 등과 같은 기술 문서 기반의 블로그들이 정적 사이트 생성기를 통해서 만들어 지고 있습니다. 대표적인 것이 **[Jekyll(지킬)](https://jekyllrb.com/){target="_blank"}**과 blogdown 패키지가 채용하고 있는 **[HUGO(휴고)](https://gohugo.io/){target="_blank"}**가 대표적입니다. 그리고 근래에는 **[Gatsby(개츠비)](https://www.gatsbyjs.com/){target="_blank"}**가 인기를 끌고 있습니다.
+
+대중성은 Jekyll -> HUGO -> Gatsby의 순서로 무게추가 이동하고 있습니다. 이들 정적 사이트 개발기는 Markdown 파일을 웹 페이지로 변환하여 웹 사이트를 개발합니다. R의 **blogdown 패키지**는 R Markdown 문서를 정적 웹 페이지로 만들어 주기 때문에 R 사용자가 쉽게 블로그와 같은 웹 사이트를 개발할 수 있습니다. **distill 패키지**도 마찬가지입니다.
+
+<br>
+
+:::: {style="display:grid; grid-template-columns: 20% 5% 75%; grid-row-gap: 80px; align-self:start"}
+
+::: {style="margin-top: 5px"}
+
+```{r gatsby-logo, echo=FALSE, out.width = "100%"}
+knitr::include_graphics("img/gatsby.png")
+```
+
+:::
+
+::: {style="margin-top: 15px"}
+:::
+
+::: {style="color:grey"}
+
+"Gatsby는 최근 대세로 자리잡은 **React(리액트) 기반**으로 웹 사이트를 만드는 프레임워크입니다. 정적 웹 사이트나 블로그를 아주 쉽고 빠르게 개발할 수 있어 때문에 블로그 개발에 자주 활용됩니다. Gatsby는 **Markdown 문서를 정적 웹 페이지를 만들어**주고, 배포할 때 웹 페이지로 빌드되기 때문에 별도의 웹 어플리케이션 서버(WAS)가 없이도 운영이 가능합니다." 
+
+:::
+
+::::
+
+<br>
+
+Gatsby의 스키마는 다음과 같습니다. Gatsby는 [GraphQL](https://graphql.org/){target="_blank"} 이라는 기술을 이용헤서 데이터 소스에서 데이터를 가져다가 정적 사이트를 만들어 줍니다. 마크다운 문서도 데이터 소스 중의 하나입니다.
+
+<br>
+
+```{r gatsby-arch, echo=FALSE, out.width = "85%"}
+knitr::include_graphics("img/gatsby-arch.png")
+```
+
+<br>
+
+코스 수강자에게 보여지는 코스 컨텐츠와 UI/UX는 Gatsby로 만들어 진 것입니다.
+
+
+## mybinder.org
+
+**[Binder(mybinder.org)](https://mybinder.org/){target="_blank"}**는 **[Github](https://github.com/){target="_blank"}** 저장소(Repository) URL만 입력하면 저장되어 있는 소스 코드와 프로젝트 설정으로 **[Jupyter Notebook](https://jupyter.org/){target="_blank"}**을 실행시켜 주는 서비스를 제공합니다. 그러므로 프로젝트의 **재현성(Reproducible)을 위한 유용한 도구**이자, 무료 도구입니다.
+
+
+<br>
+
+:::: {style="display:grid; grid-template-columns: 20% 5% 75%; grid-row-gap: 80px; align-self:start"}
+
+::: {style="margin-top: 0px"}
+
+```{r jupyter, echo=FALSE, out.width = "100%"}
+knitr::include_graphics("img/jupyter.png")
+```
+
+:::
+
+::: {style="margin-top: 15px"}
+:::
+
+::: {style="color:grey; margin-top: 15px;"}
+
+"**Jupyter Notebook**은 코드, 시각화 및 텍스트가 포함된 문서를 만들고 공유하기 위한 웹 애플리케이션입니다. 주로 데이터 과학, 통계 모델링, 기계 학습 등에서 사용되고 있습니다. **Interactive한 웹 기반의 IDE**로, Python 코드를 넣으면 원격 서버에서 명령이 실행되어 결과가 보여집니다. 주요한 것은 Python 뿐만 아니라, **R 등 다수의 오픈소스 컴퓨터 언어를 지원**한다는 점입니다."
+
+:::
+
+::::
+
+<br>
+
+Github도 Github Pages 기능이 있어, *.github.io와 같은 URL로 정적 웹 페이지를 공유할 수 있어 유용하게 사용하고 있습니다. 
+
+Binder에서 Github 리파지토리를 읽어서 R 실행이 가능한 도커 컨테이너를 만들어 제공하는 것은, 여러 사람들이 동일한 환경에서 Github 리파지토리의 R 프로그램을 재현할 수 있어, 이 기능 역시 매력적입니다. 여러 수강생을 위한 코스 실행 환경에 적합합니다.
+
+<br>
+
+:::: {style="display:grid; grid-template-columns: 20% 5% 75%; grid-row-gap: 80px; align-self:start"}
+
+::: {style="margin-top: 10px"}
+
+```{r binder-ci, echo=FALSE, out.width = "100%"}
+knitr::include_graphics("img/binder-ci.png")
+```
+
+:::
+
+::: {style="margin-top: 0px"}
+:::
+
+::: {style="color:grey"}
+
+"**mybinder.org**가 제공하는 컨테이너는 R을 실행할 수 있는 환경은 물론, **RStudio와 Shiny도 지원**합니다. 이것은 RStudio Server처럼 웹 환경에서 RStudio를 실행할 수 있고, Shiny 앱도 띄워준다는 것을 의미합니다. 그러므로 [shinyapps.io](https://www.shinyapps.io/){target="_blank"}를 대체할 수도 있습니다. 이것은 **learnr 패키지로 만든 코스**를 shinyapps.io가 아닌 **mybinder.org에도 배포가 가능**하다는 것을 의미합니다." 
+
+:::
+
+::::
+
+<br>
+
+코스 수강자가 Gatsby로 구현한 정적 웹 페이지에서 작성한 R Script는 Binder의 도커 컨테이너에서 실행됩니다. 이네스가 개발한 Juniper Javascript가 이 두 시스템을 연결시켜주는 기능을 수행합니다.
+
+
+## 코스 컨텐츠 작성
+
+앞서 Gatsby는 GraphQL를 이용해서 데이터 소스인 Markdown 파일을 가져다 정적 페이지를 작성한다고 언급했습니다. 그러면 이네스 플랫폼에서는 어떻게 하습 컨텐츠로 만들어지는지 살펴봅니다.
+
+### chapter 
+chapter 디렉토리의 Markdown 파일은 강의 챕터(chapter)를 만들어 줍니다.
+
+### slides
+slides 디렉토리의 Markdown 파일은 강의 슬라이드(slides)를 만들어 줍니다.
+
+### exercises
+exercises 디렉토리의 R 파일은 강의 연습문제(exercises)를 만들어 줍니다.
+
+
+
+
+
+
+

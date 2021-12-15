@@ -2486,6 +2486,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
   <link href="site_libs/panelset-0.2.5.9000/panelset.css" rel="stylesheet" />
   <script src="site_libs/panelset-0.2.5.9000/panelset.js"></script>
+  <link href="site_libs/font-awesome-5.13.0/css/all.min.css" rel="stylesheet" />
+  <link href="site_libs/font-awesome-5.13.0/css/v4-shims.min.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2571,6 +2573,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul></li>
 <li><a href="#github에-코스-컨텐츠-배포하기">Github에 코스 컨텐츠 배포하기</a>
 <ul>
+<li><a href="#github-배포-전략">Github 배포 전략</a></li>
 <li><a href="#사전작업">사전작업</a></li>
 <li><a href="#meta.json-수정">meta.json 수정</a></li>
 <li><a href="#readme-수정하기">README 수정하기</a></li>
@@ -2623,18 +2626,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p>코스 서비스는 netlify에 배포하여 서비스를 운영할 것입니다. 그래서 사이트 URL로 <a href="https://course-starter-dlookr.netlify.com">https://course-starter-dlookr.netlify.com</a>을 지정합니다.</p>
 <h3 id="binder-연결정보-변경">Binder 연결정보 변경</h3>
-<p>코스 컨텐츠의 프론트 엔드(Front-End)는 개츠비 기반으로 구현되었습니다. 그러나 핸즈온을 위한 R 스크립트의 실행, 즉 백 엔드는(Back-End) R이 설치된 환경에서 실행됩니다. 이 환경은 Binder(mybinder.org)에서 도커 기반으로 구성됩니다. 이 구성을 다음과 같이 meta.json에 정의합니다.</p>
-<p>“juniper” 섹션에서 변경이 필요한 “repo”와 “branch”만 변경하면 됩니다.</p>
+<p>코스 컨텐츠의 프론트 엔드(Front-End)는 Gatsby 기반으로 구현되었습니다. 그러나 핸즈온을 위한 R 스크립트의 실행, 즉 백 엔드는(Back-End) R이 설치된 환경에서 실행됩니다. 이 환경은 Binder(mybinder.org)에서 도커 기반으로 구성됩니다. 이 구성을 다음과 같이 meta.json에 정의합니다.</p>
+<p>“juniper” 섹션에서 변경이 필요한 “repo”를 변경하면 됩니다.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;juniper&quot;</span><span class="sc">:</span> {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;repo&quot;</span><span class="sc">:</span> <span class="st">&quot;choonghyunryu/course-starter-dlookr&quot;</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;branch&quot;</span><span class="sc">:</span> <span class="st">&quot;master&quot;</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;branch&quot;</span><span class="sc">:</span> <span class="st">&quot;binder&quot;</span>,</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;lang&quot;</span><span class="sc">:</span> <span class="st">&quot;r&quot;</span>,</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;kernelType&quot;</span><span class="sc">:</span> <span class="st">&quot;ir&quot;</span>,</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;debug&quot;</span><span class="sc">:</span> false</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div>
 </div>
-<p>개발한 Gihthub 코스 컨텐츠의 Github 리파지토리를 기술합니다. 필자는 템플리트 프로젝트를 “choonghyunryu/course-starter-dlookr”에 저장했기 때문이 이네스의 리파지토리에서 대체합니다. 그리고 branch는 “binder”에서 “master”로 대체합니다.</p>
+<p>개발한 Gihthub 코스 컨텐츠의 Github 리파지토리를 기술합니다. 필자는 템플리트 프로젝트를 ’choonghyunryu/course-starter-dlookr’에 저장했기 때문이 이네스의 리파지토리에서 대체합니다. 그리고 ’branch’는 ’binder’를 유지합니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="bg-orange">
+<h4 style="margin-bottom: 10px; margin-top: 0px;">
+<i class="fa fa-lightbulb" role="presentation" aria-label="lightbulb icon" style="margin-right: 5px;"></i>
+솔루션
+</h4>
+백 엔드 서비스를 위해서 Binder에 연결할 binder 브랜치를 만듭니다. 그리고 프론트 엔드를 위한 브랜치는 master를 사용합니다. 그 이유는 백 엔드는 변경할 일이 없지만, 프론트 엔드는 컨텐츠를 개발하면서 브렌치가 자주 업데이트될 것입니다. 그럴때마다 Binder에서 도커가 컨테이너를 강제로 재 생성하는 오버헤드가 발생합니다. master와 binder 브랜치를 분리하는 이유입니다.
+</div>
+</div>
+<p><br></p>
+<p>“kernelType”의 “ir”은 IRKernel<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>을 의미합니다. 이 커널은 RStudio 없이 Jupyter 환경에서 R을 실행할 수 있는 커널입니다.</p>
 <h2 id="binder-컨테이너-설정">Binder 컨테이너 설정</h2>
 <p>이네스 플랫폼 템플리트의 <strong>binder</strong> 디렉토리에는 다음과 같은 두개의 파일이 존재합니다.</p>
 <ul>
@@ -2668,6 +2682,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h2 id="github에-코스-컨텐츠-배포하기">Github에 코스 컨텐츠 배포하기</h2>
 <p>Github에 코스 소스를 올리는 작업부터 배포작업이 시작됩니다.</p>
+<h3 id="github-배포-전략">Github 배포 전략</h3>
+<p>이네스 코스는의 Github 브랜치는 앞서 Binder 연결정보 변경에서 설명한 대로, 다음 그림과 같이 2개로 배포합니다.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/repo.png" width="80%" style="display: block; margin: auto;" /></p>
+</div>
+<p><br></p>
+<h4 id="master-브랜치-리파지토리">master 브랜치 리파지토리</h4>
+<p>프론트 엔드를 담당할 브랜치 리파지토리입니다. Gatsby Javascript 프레임워크를 사용하여 빌드할 페이지로 Netlify에 서비스될 리파지토리입니다. Gatsby는 컨텐츠를 페이지에 랜더링하고, exercises의 코드를 Binder에 보내고 그 결과를 받아서 화면에 처리합니다.</p>
+<p>master 브랜치 리파지토리에서 Netlify(Gatsby Javascript)가 처리하는 부분은 다음과 같습니다.</p>
+<ul>
+<li>exercises/solutions/tests</li>
+<li>chapter.md 파일</li>
+<li>slides (reveal.js 이용)</li>
+</ul>
+<h4 id="binder-브랜치-리파지토리">binder 브랜치 리파지토리</h4>
+<p>백 엔드를 담당할 브랜치 리파지토리입니다. Binder에서 도커 컨테이너로 만들어집니다. 브랜치가 업데이트될 때마다 Binder가 컨테이너를 강제로 빌드합니다.</p>
+<p>master 브랜치를 Binder와 연결하면 chapter.md 등 컨텐츠들이 수정될 때마가 컨테이너가 다시 빌드됩니다. (Binder가 컨테이너를 빌드하는 작업은 컨테이너에 이미지를 설치하고 소스를 컴파일하는 과정이기 때문에 5~10분 정도의 시간이 소요됩니다.) 그래서 독립적인 binder 브랜치를 만듭니다.</p>
+<p>binder 브랜치 리파지토리에서 Binder가 처리하는 부분은 다음과 같습니다.</p>
+<ul>
+<li>data 디렉토리의 데이터 셋</li>
+<li>binder 디렉토리의 설치 설정 파일
+<ul>
+<li>install.R</li>
+<li>runtime.txt</li>
+</ul></li>
+</ul>
 <h3 id="사전작업">사전작업</h3>
 <p>Node.js 패키지를 설치하면서 생성한 package-lock.json 파일을 삭제해서 Github의 리파지토리에서도 삭제토록 합니다. 그리고 여러 작업 과정에서 신규로 생성된 파일 중에서 Github에 올려서는 안될 파일은 이미 이네스가 <strong>.gitignore</strong> 파일에 등록되어서 신경쓰지 않아도 됩니다.</p>
 <p>예를 들면 Node.js 패키지를 설치하면서 생성된 <strong>node_modules</strong> 디렉토리와 컨텐츠가 빌드되어 만들어진 <strong>public</strong> 디렉토리가 대표적입니다.</p>
@@ -2694,7 +2734,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;testTemplate&quot;</span><span class="sc">:</span> <span class="st">&quot;success &lt;- function(text) {</span><span class="sc">\n</span><span class="st">    cat(paste(</span><span class="sc">\&quot;\\</span><span class="st">033[32m</span><span class="sc">\&quot;</span><span class="st">, text, </span><span class="sc">\&quot;\\</span><span class="st">033[0m</span><span class="sc">\&quot;</span><span class="st">, sep = </span><span class="sc">\&quot;\&quot;</span><span class="st">))</span><span class="sc">\n</span><span class="st">}</span><span class="sc">\n\n</span><span class="st">.solution &lt;- </span><span class="sc">\&quot;</span><span class="st">${solutionEscaped}</span><span class="sc">\&quot;\n\n</span><span class="st">${solution}</span><span class="sc">\n\n</span><span class="st">${test}</span><span class="sc">\n</span><span class="st">tryCatch({</span><span class="sc">\n</span><span class="st">    test()</span><span class="sc">\n</span><span class="st">}, error = function(e) {</span><span class="sc">\n</span><span class="st">    cat(paste(</span><span class="sc">\&quot;\\</span><span class="st">033[31m</span><span class="sc">\&quot;</span><span class="st">, e[1], </span><span class="sc">\&quot;\\</span><span class="st">033[0m</span><span class="sc">\&quot;</span><span class="st">, sep = </span><span class="sc">\&quot;\&quot;</span><span class="st">))</span><span class="sc">\n</span><span class="st">})&quot;</span>,</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;juniper&quot;</span><span class="sc">:</span> {</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;repo&quot;</span><span class="sc">:</span> <span class="st">&quot;choonghyunryu/course-starter-dlookr&quot;</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;branch&quot;</span><span class="sc">:</span> <span class="st">&quot;master&quot;</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;branch&quot;</span><span class="sc">:</span> <span class="st">&quot;binder&quot;</span>,</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;lang&quot;</span><span class="sc">:</span> <span class="st">&quot;r&quot;</span>,</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;kernelType&quot;</span><span class="sc">:</span> <span class="st">&quot;ir&quot;</span>,</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;debug&quot;</span><span class="sc">:</span> false</span>
@@ -2727,7 +2767,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>The interactive course site is built on the amazing framework created by [Ines Montani](https<span class="sc">:</span><span class="er">//</span>ines.io<span class="sc">/</span>), originally built <span class="cf">for</span> her [spaCy course](https<span class="sc">:</span><span class="er">//</span>course.spacy.io).  The front<span class="sc">-</span>end is powered by</span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>[Gatsby](http<span class="sc">:</span><span class="er">//</span>gatsbyjs.org<span class="sc">/</span>) and the back<span class="sc">-</span>end code execution uses [Binder](https<span class="sc">:</span><span class="er">//</span>mybinder.org).</span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>[<span class="sc">!</span>[Binder](https<span class="sc">:</span><span class="er">//</span>mybinder.org<span class="sc">/</span>badge_logo.svg)](https<span class="sc">:</span><span class="er">//</span>mybinder.org<span class="sc">/</span>v2<span class="sc">/</span>gh<span class="sc">/</span>choonghyunryu<span class="sc">/</span>course<span class="sc">-</span>starter<span class="sc">-</span>dlookr<span class="sc">/</span>master)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>[<span class="sc">!</span>[Binder](https<span class="sc">:</span><span class="er">//</span>mybinder.org<span class="sc">/</span>badge_logo.svg)](https<span class="sc">:</span><span class="er">//</span>mybinder.org<span class="sc">/</span>v2<span class="sc">/</span>gh<span class="sc">/</span>choonghyunryu<span class="sc">/</span>course<span class="sc">-</span>starter<span class="sc">-</span>dlookr<span class="sc">/</span>binder)</span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>[<span class="sc">!</span>[Netlify Status](https<span class="sc">:</span><span class="er">//</span>api.netlify.com<span class="sc">/</span>api<span class="sc">/</span>v1<span class="sc">/</span>badges<span class="sc">/</span>d47e6b80<span class="sc">-</span>e1a0<span class="sc">-</span>42c6<span class="dv">-9633</span><span class="sc">-</span>8aa5d6d11ab2<span class="sc">/</span>deploy<span class="sc">-</span>status)](https<span class="sc">:</span><span class="er">//</span>app.netlify.com<span class="sc">/</span>sites<span class="sc">/</span>course<span class="sc">-</span>starter<span class="sc">-</span>dlookr<span class="sc">/</span>deploys)</span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>To learn more about building a course on this framework, see Ines<span class="st">&#39;s starter repos for making courses in [Python](https://github.com/ines/course-starter-python) and [R](https://github.com/ines/course-starter-r), and her explanation of how the framework works at [the original course repo](https://github.com/ines/spacy-course#-faq). </span></span></code></pre></div>
@@ -2754,7 +2794,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p>그리고 공유할 Binder 다음 URL을 복사(메모)해 놓습니다.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>mybinder.org<span class="sc">/</span>v2<span class="sc">/</span>gh<span class="sc">/</span>choonghyunryu<span class="sc">/</span>course<span class="sc">-</span>starter<span class="sc">-</span>dlookr<span class="sc">/</span>master</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>https<span class="sc">:</span><span class="er">//</span>mybinder.org<span class="sc">/</span>v2<span class="sc">/</span>gh<span class="sc">/</span>choonghyunryu<span class="sc">/</span>course<span class="sc">-</span>starter<span class="sc">-</span>dlookr<span class="sc">/</span>binder</span></code></pre></div>
 </div>
 <p><br></p>
 <p>그리고, <strong>launch</strong> 버튼을 눌러 Binder 이미지를 만들어 봅니다. 정상적으로 이미지가 생성되는지 확인하기 위함입니다. 그러면 다음 그림처럼 이미지를 만들기 시작합니다.</p>
@@ -2798,7 +2838,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><img src="img/set-netflity.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <p><br></p>
-<p><strong>branch</strong>에는 <strong>‘master’</strong>를 선택합니다. 그리고, 개츠비를 빌드할 설정은 netflity에서 설정한 기본 값을 그대로 사용합니다.</p>
+<p><strong>branch</strong>에는 <strong>‘master’</strong>를 선택합니다. 그리고, Gatsby를 빌드할 설정은 netflity에서 설정한 기본 값을 그대로 사용합니다.</p>
 <p><strong>중요한 것은 이네스의 코스 플랫폼이 3년 전에 만든 것이라 Node.js의 버전을 그 시점의 버전으로 설정하지 않으면 빌드 시 오류가 발생합니다.</strong></p>
 <p>위 화면에서 <strong>‘Show advanced’</strong> 버튼을 누르면 다음 화면이 나타납니다.</p>
 <p><br></p>
@@ -2888,6 +2928,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li>Netflity + Github + Binder를 이용해서 무료로 온라인 대화형 코스 서비스를 배포할 수 있습니다.</li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Native R kernel for Jupyter (<a href="https://github.com/IRkernel/IRkernel" class="uri">https://github.com/IRkernel/IRkernel</a>)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p><a href="https://github.com/ines/course-starter-r/tree/master" class="uri">https://github.com/ines/course-starter-r/tree/master</a> 이미지와 본문 참고<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
