@@ -200,8 +200,195 @@ knitr::include_graphics("img/binder-ci.png")
 ### chapter 
 chapter 디렉토리의 Markdown 파일은 강의 챕터(chapter)를 만들어 줍니다.
 
+<br>
+
+::: {.panelset}
+
+::: {.panel}
+#### 챕터 Markdown 소스
+
+```{r, echo=TRUE, eval=FALSE}
+---
+title: 'Chapter 1: Getting started'
+description:
+  'This chapter will teach you about many cool things and introduce you to the
+  most important concepts of the course.'
+prev: null
+next: /chapter2
+type: chapter
+id: 1
+---
+
+<exercise id="1" title="Introduction" type="slides">
+
+<slides source="chapter1_01_introduction">
+</slides>
+
+</exercise>
+
+<exercise id="2" title="Getting Started">
+
+Let's ask some questions about the slides. Whats the correct answer?
+
+<choice>
+<opt text="Answer one">
+
+This is not the correct answer.
+
+</opt>
+
+<opt text="Answer two" correct="true">
+
+Good job!
+
+</opt>
+
+<opt text="Answer three">
+
+This is not correct either.
+
+</opt>
+</choice>
+
+</exercise>
+
+<exercise id="3" title="First steps">
+
+This is a code exercise. The content can be formatted in simple Markdown – so
+you can have **bold text**, `code` or [links](https://spacy.io) or lists, like
+the one for the instructions below.
+
+- These are instructions and they can have bullet points.
+- The code block below will look for the files `exc_01_03`, `solution_01_03` and
+  `test_01_03` in `/exercises`.
+
+<codeblock id="01_03">
+
+This is a hint.
+
+</codeblock>
+
+</exercise>
+
+```
+
+:::
+
+::: {.panel}
+#### 랜더링된 챕터 컨텐츠
+
+랜더링된 화면의 일부입니다. Gatsby는 Netlify(넷리파이)와 같은 정적 웹 서비스 호스팅 서버로 배포(Deploy)될 때, 다음과 같은 웹 페이지를 생성합니다. 
+
+![챕터 학습목록 화면](img/chapter-1.png)
+
+마크다운 파일에 기술한 퀴즈도 생성해줍니다.
+
+![코스 컨텐츠 중 퀴즈 화면](img/chapter-2.png)
+
+
+:::
+
+:::
+
+#### YAML 헤더
+Markdown의 YAML 헤더는 다음과 같습니다.
+
+* title: 챕터 타이틀
+* description: 챕터 개요
+* prev: 이전 챕터
+* next: 이후 챕터 
+* type: 컨텐츠 타입
+  - 챕터일 경우에는 chapter
+* id: 컨텐츠 아이디
+
+#### 주요 Tags
+ 
+* <exercise> : 챕터 내 학습 내역 구간 정의
+* <slides> : 슬라이트 Lecture 정의
+* <choice> : 선택형 퀴즈 정의
+* <codeblock> : 핸즈온 연습문제 정의
+
+
 ### slides
-slides 디렉토리의 Markdown 파일은 강의 슬라이드(slides)를 만들어 줍니다.
+
+slides 디렉토리의 Markdown 파일은 강의 슬라이드(slides) 노트를 만들어 줍니다.
+
+<br>
+
+::: {.panelset}
+
+::: {.panel}
+
+#### 슬라이드 노트 Markdown 소스
+
+````
+---
+type: slides
+---
+
+# Introduction
+
+Notes: Text at the end of a slide prefixed like this will be displayed as
+speaker notes on the side. Slides can be separated with a divider: ---.
+
+---
+
+# This is a slide
+
+```r
+# Print something
+print("Hello world", quote = FALSE)
+```
+
+```out
+Hello world
+```
+
+- Slides can have code, bullet points, tables and pretty much all other Markdown
+  elements.
+- This is another bullet point.
+
+<img src="profile.jpg" alt="This image is in /static" width="25%">
+
+Notes: Some more notes go here
+
+---
+
+# Let's practice!
+
+Notes: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
+libero at est congue, sed vestibulum tortor laoreet. Aenean egestas massa non
+commodo consequat. Curabitur faucibus, sapien vitae euismod imperdiet, arcu erat
+semper urna, in accumsan sapien dui ac mi. Pellentesque felis lorem, semper nec
+velit nec, consectetur placerat enim.
+
+````
+
+:::
+
+::: {.panel}
+#### 랜더링된 슬라이드 노트 컨텐츠
+
+랜더링된 슬라이드 노트 화면의 일부입니다.
+
+![슬라이드 노트 화면](img/slide-1.png)
+
+:::
+
+:::
+
+
+#### YAML 헤더
+Markdown의 YAML 헤더는 다음과 같습니다.
+
+* type: "slides"로 기술하는 컨텐츠 타입
+
+#### 주요 Tags
+Markdown 태그를 지원하며, 다음의 추가 태그를 제공합니다.
+
+* ---- : 슬라이드 노트 페이지 구분자
+* Notes: : 학습 내용을 설명하는 스크립트 정의
+* ```out : 출력을 정의하는 코드 청크
 
 ### exercises
 exercises 디렉토리의 R 파일은 강의 연습문제(exercises)를 만들어 줍니다.
