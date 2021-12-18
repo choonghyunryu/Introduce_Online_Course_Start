@@ -63,6 +63,9 @@ div(class = "preface",
 * Supervised Machine Learning: Case Studies in R
   - [https://supervised-ml-course.netlify.app/](https://supervised-ml-course.netlify.app/){target="_blank"}
   - Julia Silge
+* Generalized Additive Models in R
+  - [https://noamross.github.io/gams-in-r-course/](https://noamross.github.io/gams-in-r-course/){target="_blank"}
+  - Noam Ross 
 
 ## 이네스 코스 플랫폼 구조
 

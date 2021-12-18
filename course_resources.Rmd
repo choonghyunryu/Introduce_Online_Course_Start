@@ -71,9 +71,9 @@ knitr::opts_chunk$set(echo = FALSE)
      + [https://supervised-ml-course.netlify.app/](https://supervised-ml-course.netlify.app/){target="_blank"}
      + Supervised Machine Learning 코스
      
-* **Supervised Machine Learning: Case Studies in R 소스**
-     + [https://github.com/juliasilge/supervised-ML-case-studies-course](https://github.com/juliasilge/supervised-ML-case-studies-course){target="_blank"}
-     + Supervised Machine Learning 코스 소스
+* **GAMs in R 소스**
+     + [https://github.com/noamross/gams-in-r-course](https://github.com/noamross/gams-in-r-course){target="_blank"}
+     + Generalized Additive Models in R 코스 소스
 * **GAMs in R**
      + [https://noamross.github.io/gams-in-r-course/](https://noamross.github.io/gams-in-r-course/){target="_blank"}
      + Generalized Additive Models in R 코스     

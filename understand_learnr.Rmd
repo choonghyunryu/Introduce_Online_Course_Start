@@ -1,7 +1,7 @@
 ---
 title: "learnr 코스 플랫폼 이해"
 description: |
-  learnr 코스 플랫폼 이해
+  learnr 코스 플랫폼의 구성과 매커니즘을 이해합니다.
 site: distill::distill_website
 output:
   distill::distill_article:
@@ -11,7 +11,7 @@ author:
   - name: 유충현 
     url: https://choonghyunryu.github.io/
     affiliation: Tidyverse Korea
-date: 2021-12-10     
+date: 2021-12-17
 ---
 
 ```{r setup, include=FALSE}
@@ -27,13 +27,19 @@ xaringanExtra :: use_panelset()
 ```
 
 
-```{r tidyverse, echo=FALSE, out.width = "20%"}
+```{r learnr-logo, echo=FALSE, out.width = "20%"}
 knitr::include_graphics("img/learnr_logo.png")
 ```
 
 ```{r, preface, echo=FALSE}
 div(class = "preface", 
     h4("들어가기"),
-    "TBD")
+    "또 RStudio라구요?!", br(),
+    "RStudio의 데이터 과학자, 소프트웨어 개발자들은 R 생태계를 위한 여러 유용한 패키지를 만들었습니다.", br(),
+    "교육에도 관심이 많은 RStudio가 R 온라인 학습을 위한 코스 플랫폼인 leanr 패키지를 만든 것은 우연이 아닙니다.", br(),
+    "어떤 방법으로 코스를 진행할 수 있는지, 그들의 코스 솔루션을 살펴보자구요.", br(),
+    "엇, 동양의 형설지공과는 차원이 차른 서양의 스케일!!! 반딧불이 아닌, 아구 촉수의 빛으로 책을 읽네요.")
 ```
+
+## learnr 코스 플랫폼 이해
 
