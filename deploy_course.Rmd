@@ -79,7 +79,7 @@ div(class = "preface",
 
 
 ```{r, sol-1, echo=FALSE}
-div(class = "bg-orange", 
+div(class = "bg-blue", 
     h4(icon("lightbulb", style = "margin-right: 5px;"), 
        "솔루션", style = "margin-bottom: 10px; margin-top: 0px;"), 
     "백 엔드 서비스를 위해서 Binder에 연결할 binder 브랜치를 만듭니다. 그리고 프론트 엔드를 위한 브랜치는 master를 사용합니다. 그 이유는 백 엔드는 변경할 일이 없지만, 프론트 엔드는 컨텐츠를 개발하면서 브렌치가 자주 업데이트될 것입니다. 그럴때마다 Binder에서 도커가 컨테이너를 강제로 재 생성하는 오버헤드가 발생합니다. master와 binder 브랜치를 분리하는 이유입니다.")
@@ -170,7 +170,7 @@ binder 브랜치 리파지토리에서 Binder가 처리하는 부분은 다음�
 
 ### 사전작업
 
-Node.js 패키지를 설치하면서 생성한 package-lock.json 파일을 삭제해서 Github의 리파지토리에서도 삭제토록 합니다. 그리고 여러 작업 과정에서 신규로 생성된 파일 중에서 Github에 올려서는 안될 파일은 이미 이네스가  **.gitignore** 파일에 등록되어서 신경쓰지 않아도 됩니다.
+Node.js 패키지를 설치하면서 생성한 package-lock.json 파일을 삭제해서 Github의 리파지토리에서도 삭제토록 합니다. 그리고 여러 작업 과정에서 신규로 생성된 파일 중에서 Github에 올려서는 안될 파일은 이미 이네스가  **.gitignore** 파일에 등록해 놓아서 신경쓰지 않아도 됩니다.
 
 예를 들면 Node.js 패키지를 설치하면서 생성된 **node_modules** 디렉토리와 컨텐츠가 빌드되어 만들어진 **public** 디렉토리가 대표적입니다.
 
@@ -190,12 +190,22 @@ Node.js 패키지를 설치하면서 생성한 package-lock.json 파일을 삭�
     "courseId": "course-starter-dlookr",
     "title": "dlookr online course",
     "slogan": "A free online course",
-    "description": "이 과정은 R 데이터 분석 과정에서의 데이터의 진단, 탐색적 데이터 분석, 데이터 변환을 수행하는 방법에 대한 무료, 오픈소스 과정입니다. dlookr 패키지를 사용하여 모델 적합 전 단계의 과정에서의 테크닉을 연습합니다. 이네스 몬타니(Ines Montani)는 이 과정을 실행하는 웹 프레임워크를 설계했습니다. 이 과정은 이네스의 프레임워크 기반에서 동작합니다. 이네스에게도 감사의 인사를 전합니다.이 과정을 개선하는 방법에 대한 여러분의 기여와 의견을 환영합니다. 수정하거나 개선이 필요한 이슈를 찾으면 풀 리퀘스트를 제출하세요.",
-    "bio": "저는 유충현입니다. Tidiverse Korea에서 활동하는 데이터 과학자로 한화생명 Data Analytics 노드에서 근무하고 있습니다. dlookr 패키지의 개발자이기도 합니다. R과 데이터 분석 교육 컨텐츠 개발에 관심이 많은, R과 데이터를 사랑하는 R 유저입니다.",
+    "description": "이 과정은 R 데이터 분석 과정에서의 데이터의 진단, 
+  탐색적 데이터 분석, 데이터 변환을 수행하는 방법에 대한 무료, 오픈소스 과정입니다. 
+  dlookr 패키지를 사용하여 모델 적합 전 단계의 과정에서의 테크닉을 연습합니다. 
+  이네스 몬타니(Ines Montani)는 이 과정을 실행하는 웹 프레임워크를 설계했습니다. 
+  이 과정은 이네스의 프레임워크 기반에서 동작합니다. 이네스에게도 감사의 인사를 전합니다.
+  이 과정을 개선하는 방법에 대한 여러분의 기여와 의견을 환영합니다. 
+  수정하거나 개선이 필요한 이슈를 찾으면 풀 리퀘스트를 제출하세요.",
+    "bio": "저는 유충현입니다. Tidiverse Korea에서 활동하는 데이터 과학자로 한화생명 
+  Data Analytics 노드에서 근무하고 있습니다. dlookr 패키지의 개발자이기도 합니다. 
+  R과 데이터 분석 교육 컨텐츠 개발에 관심이 많은, R과 데이터를 사랑하는 R 유저입니다.",
     "siteUrl": "https://course-starter-dlookr.netlify.com",
     "twitter": "bdboy01",
     "fonts": "IBM+Plex+Mono:500|IBM+Plex+Sans:700|Lato:400,400i,700,700i",
-    "testTemplate": "success <- function(text) {\n    cat(paste(\"\\033[32m\", text, \"\\033[0m\", sep = \"\"))\n}\n\n.solution <- \"${solutionEscaped}\"\n\n${solution}\n\n${test}\ntryCatch({\n    test()\n}, error = function(e) {\n    cat(paste(\"\\033[31m\", e[1], \"\\033[0m\", sep = \"\"))\n})",
+    "testTemplate": "success <- function(text) {\n    cat(paste(\"\\033[32m\", text, 
+  \"\\033[0m\", sep = \"\"))\n}\n\n.solution <- \"${solutionEscaped}\"\n\n${solution}\n\n${test}\ntryCatch({\n    
+  test()\n}, error = function(e) {\n    cat(paste(\"\\033[31m\", e[1], \"\\033[0m\", sep = \"\"))\n})",
     "juniper": {
         "repo": "choonghyunryu/course-starter-dlookr",
         "branch": "binder",
@@ -231,18 +241,23 @@ This course approaches data diagnosis, EDA, transformation learning using:
 
 - the [dlookr](https://choonghyunryu.github.io/dlookr/)
 
-The interactive course site is built on the amazing framework created by [Ines Montani](https://ines.io/), originally built for her [spaCy course](https://course.spacy.io).  The front-end is powered by
-[Gatsby](http://gatsbyjs.org/) and the back-end code execution uses [Binder](https://mybinder.org).
+The interactive course site is built on the amazing framework created by 
+[Ines Montani](https://ines.io/), originally built for her [spaCy course](https://course.spacy.io).  
+The front-end is powered by [Gatsby](http://gatsbyjs.org/) and the back-end code execution uses 
+[Binder](https://mybinder.org).
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/choonghyunryu/course-starter-dlookr/binder)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d47e6b80-e1a0-42c6-9633-8aa5d6d11ab2/deploy-status)](https://app.netlify.com/sites/course-starter-dlookr/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d47e6b80-e1a0-42c6-9633-8aa5d6d11ab2/deploy-status)]
+(https://app.netlify.com/sites/course-starter-dlookr/deploys)
 
-To learn more about building a course on this framework, see Ines's starter repos for making courses in [Python](https://github.com/ines/course-starter-python) and [R](https://github.com/ines/course-starter-r), and her explanation of how the framework works at [the original course repo](https://github.com/ines/spacy-course#-faq). 
+To learn more about building a course on this framework, see Ines's starter repos for making courses in 
+[Python](https://github.com/ines/course-starter-python) and [R](https://github.com/ines/course-starter-r), 
+and her explanation of how the framework works at [the original course repo](https://github.com/ines/spacy-course#-faq). 
 ```
 
 수정한 README.md 파일의 내용 중에는 이후에 설정한 내용이 반영된 것이 포함되어 있습니다. 이 글을 순차적으로 작성하기 위해서, 편의상 후반부의 정보가 본 파일에 포함됨을 인지하시기 바랍니다. 
 
-README.md 파일은 다음 화면처럼 랜더링됩니다. 특히, Binder와 Netflity 배지는 해당 서비스의 상태를 나타내기 때문에 유용합니다. 이 화면은 Github에 변경된 코스 컨텐츠가 Push된 후, 곧바로 변화를 감지한 Netflity에서 서비스를 빌드하는 과정에서의 화면입니다. 만약 빅드가 종료되면 배지의 상태는 **'Building'**에서 **'Success'**로 변경될 것입니다.
+README.md 파일은 다음 화면처럼 랜더링됩니다. 특히, Binder와 Netflity 배지는 해당 서비스의 상태를 나타내기 때문에 유용합니다. 이 화면은 Github에 변경된 코스 컨텐츠가 Push된 후, 곧바로 변화를 감지한 Netflity에서 서비스를 빌드하는 과정에서의 화면입니다. 만약 빌드가 종료되면 배지의 상태는 **'Building'**에서 **'Success'**로 변경될 것입니다.
 
 ```{r readme, echo=FALSE, out.width = "80%"}
 knitr::include_graphics("img/readme.png")

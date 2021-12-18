@@ -2603,7 +2603,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h2 id="이네스-코스-플랫폼-이해">이네스 코스 플랫폼 이해</h2>
 <h3 id="이네스-코스-플랫폼의-명명">이네스 코스 플랫폼의 명명</h3>
-<p><a href="https://ines.io/" target="_blank">이네스 몬타니</a>는 인공지능과 자연어 처리 기술을 연구하는 소프트웨어 개발자이자 <a href="https://explosion.ai/" target="_blank">Explosion</a>의 공동 설립자이자 CEO입니다.</p>
+<p><a href="https://ines.io/" target="_blank">이네스 몬타니</a>는 인공지능과 자연어 처리 기술을 연구하는 소프트웨어 개발자입니다. 그리고 <a href="https://explosion.ai/" target="_blank">Explosion</a>의 공동 설립자이자 CEO입니다.</p>
 <p>이네스 코스 플랫폼은 데이터캠프와 결별한 코스 컨텐츠 프로바이더들 중의 이네스 몬타니(Ines Montani)가 개발한 코스 플랫폼입니다. 플랫폼의 고유 명칭이 없기 때문에 편의상 <strong>이네스 코스 플랫폼</strong>이라 부르겠습니다.</p>
 <h3 id="이네스-코스-플랫폼-uiux">이네스 코스 플랫폼 UI/UX</h3>
 <p>이네스 코스 플랫폼의 UI/UX는 DataCamp와 유사합니다. DataCamp에서 구동되는 코스 플랫폼을 포팅한 것이기 때문에 마치 DataCamp 클론처럼 유사한 기능으로 구성되어 있습니다.</p>
@@ -2699,7 +2699,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><br></p>
 <p>코스 수강자가 Gatsby로 구현한 정적 웹 페이지에서 작성한 R Script는 Binder의 도커 컨테이너에서 실행됩니다. 이네스가 개발한 Juniper Javascript가 이 두 시스템을 연결시켜주는 기능을 수행합니다.</p>
 <h2 id="코스-컨텐츠-작성">코스 컨텐츠 작성</h2>
-<p>앞서 Gatsby는 GraphQL를 이용해서 데이터 소스인 Markdown 파일을 가져다 정적 페이지를 작성한다고 언급했습니다. 그러면 이네스 플랫폼에서는 어떻게 하습 컨텐츠로 만들어지는지 살펴봅니다.</p>
+<p>앞서 Gatsby는 GraphQL를 이용해서 데이터 소스인 Markdown 파일을 가져다 정적 페이지를 작성한다고 언급했습니다. 그러면 이네스 플랫폼에서는 어떻게 학습 컨텐츠로 만들어지는지 살펴봅니다.</p>
 <h3 id="chapter">chapter</h3>
 <p>chapter 디렉토리의 Markdown 파일은 강의 챕터(chapter)를 만들어 줍니다.</p>
 <p><br></p>
@@ -2797,10 +2797,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <h4 id="주요-tags">주요 Tags</h4>
 <ul>
-<li><exercise> : 챕터 내 학습 내역 구간 정의</li>
-<li><slides> : 슬라이트 Lecture 정의</li>
-<li><choice> : 선택형 퀴즈 정의</li>
-<li><codeblock> : 핸즈온 연습문제 정의</li>
+<li>&lt;exercise&gt; : 챕터 내 학습 내역 구간 정의</li>
+<li>&lt;slides&gt; : 슬라이트 Lecture 정의</li>
+<li>&lt;choice&gt; : 선택형 퀴즈 정의</li>
+<li>&lt;codeblock&gt; : 핸즈온 연습문제 정의</li>
 </ul>
 <p><br></p>
 <h3 id="slides">slides</h3>
@@ -2877,8 +2877,8 @@ velit nec, consectetur placerat enim.
 <p><br></p>
 <h3 id="exercises">exercises</h3>
 <p>exercises 디렉토리의 R 파일은 강의 연습문제(exercises)를 만들어 줍니다.</p>
-<p>연습문제인 exercises 디렉토리에는 하나의 연습문제를 위한 3개의 파일로 구성된 R 스크립트 파일이 위치합니다.</p>
-<p>챕터(chapter)의 Markdown 문서 중에서 <strong>codeblock</strong> 태그에 대응하는 파일은 파일 이름의 접두어로 그 기능이 구별됩니다. codeblock 태그의 <strong>id</strong> 속성이 포함된 R 스크립트 파일은 만들어야 됩니다.</p>
+<p>연습문제인 exercises 디렉토리에는 <strong>하나의 연습문제를 위한 3개의 R 스크립트 파일</strong>이 위치합니다.</p>
+<p>챕터(chapter)의 Markdown 문서 중에서 <strong>codeblock</strong> 태그에 대응하는 파일은 파일 이름의 접두어로 그 기능이 구별됩니다. 그리고 codeblock 태그의 <strong>id</strong> 속성에 기술한 텍스트가 포함된 R 스크립트 파일을 만들어야 됩니다.</p>
 <p>연습문제 아이디가 ’first_exec’라 가정하면 codeblock 태그는 다음과 같이 정의합니다.</p>
 <pre><code>&lt;codeblock id=&quot;first_exec&quot;&gt;
 &lt;/codeblock&gt;</code></pre>
@@ -2900,7 +2900,7 @@ velit nec, consectetur placerat enim.
 <li>test_first_exec.R</li>
 </ul></li>
 </ul>
-<p>이네스 플랫폼 텔플리트의 챕터 파일 포함된 연습문제 예제에는 다음 태그로, 연습문제는 ’01_03’라는 아이디의 R 연습문제 파일들을 구동합니다.</p>
+<p>이네스 플랫폼 템플리트의 챕터 파일에 포함된 연습문제 예제의 일부인 다음 태그는, ’01_03’라는 아이디의 R 연습문제 파일들을 구동합니다.</p>
 <pre><code>&lt;codeblock id=&quot;01_03&quot;&gt;
 
 This is a hint.

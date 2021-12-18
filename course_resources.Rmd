@@ -1,7 +1,7 @@
 ---
 title: "학습 리소스"
 description: |
-  **온라인 대화용 코스** 개발을 위한 관련 학습 리소스  
+  온라인 대화용 코스 개발을 위한 관련 학습 리소스  
 site: distill::distill_website
 output:
   distill::distill_article:

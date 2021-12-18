@@ -91,8 +91,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-12-17"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-12-17"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-12-18"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-12-18"/>
   <meta name="article:author" content="유충현"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site","output","author","date"]}},"value":[{"type":"character","attributes":{},"value":["learnr 코스 플랫폼 이해"]},{"type":"character","attributes":{},"value":["learnr 코스 플랫폼의 구성과 매커니즘을 이해합니다.\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["유충현"]},{"type":"character","attributes":{},"value":["https://choonghyunryu.github.io/"]},{"type":"character","attributes":{},"value":["Tidyverse Korea"]}]}]},{"type":"character","attributes":{},"value":["2021-12-17"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site","output","author","date"]}},"value":[{"type":"character","attributes":{},"value":["learnr 코스 플랫폼 이해"]},{"type":"character","attributes":{},"value":["learnr 코스 플랫폼의 구성과 매커니즘을 이해합니다.\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["유충현"]},{"type":"character","attributes":{},"value":["https://choonghyunryu.github.io/"]},{"type":"character","attributes":{},"value":["Tidyverse Korea"]}]}]},{"type":"character","attributes":{},"value":["2021-12-18"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2505,7 +2505,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"learnr 코스 플랫폼 이해","description":"learnr 코스 플랫폼의 구성과 매커니즘을 이해합니다.","authors":[{"author":"유충현","authorURL":"https://choonghyunryu.github.io/","affiliation":"Tidyverse Korea","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-12-17T00:00:00.000+00:00","citationText":"유충현, 2021"}
+{"title":"learnr 코스 플랫폼 이해","description":"learnr 코스 플랫폼의 구성과 매커니즘을 이해합니다.","authors":[{"author":"유충현","authorURL":"https://choonghyunryu.github.io/","affiliation":"Tidyverse Korea","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-12-18T00:00:00.000+00:00","citationText":"유충현, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2551,7 +2551,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-byline">
   유충현 <a href="https://choonghyunryu.github.io/" class="uri">https://choonghyunryu.github.io/</a> (Tidyverse Korea)
   
-<br/>2021-12-17
+<br/>2021-12-18
 </div>
 
 <div class="d-article">
@@ -2559,7 +2559,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#learnr-코스-플랫폼-이해">learnr 코스 플랫폼 이해</a></li>
+<li><a href="#learnr-코스-플랫폼-이해">learnr 코스 플랫폼 이해</a>
+<ul>
+<li><a href="#learnr-패키지">learnr 패키지</a></li>
+<li><a href="#learnr-코스의-특징과-장점">learnr 코스의 특징과 장점</a></li>
+</ul></li>
+<li><a href="#코스-컨텐츠-작성">코스 컨텐츠 작성</a>
+<ul>
+<li><a href="#r-markdown-문서-생성">R Markdown 문서 생성</a></li>
+<li><a href="#yaml-헤더">YAML 헤더</a></li>
+<li><a href="#청크-옵션">청크 옵션</a></li>
+</ul></li>
+<li><a href="#결언">결언</a>
+<ul>
+<li><a href="#유용한-learnr-코스-소개">유용한 learnr 코스 소개</a></li>
+<li><a href="#mybinder.org에서의-배포">mybinder.org에서의 배포</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
@@ -2581,7 +2596,217 @@ RStudio의 데이터 과학자, 소프트웨어 개발자들은 R 생태계를 �
 </div>
 </div>
 <h2 id="learnr-코스-플랫폼-이해">learnr 코스 플랫폼 이해</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>learnr 코스 플랫폼이라 거창하게 명명했지만, 사실은 learnr 패키지로 만든 대화형 튜토리얼을 만들어서 배포하는 환경을 의미합니다.</p>
+<h3 id="learnr-패키지">learnr 패키지</h3>
+<p>learnr는 R Markdown을 사용하여 대화형 튜토리얼(자습서)를 만드는 <strong>R 패키지</strong>입니다. 내러티브, 이미지, 비디오, 퀴즈 및 연습문제를 조합하여 R과 R 패키지 학습을 위한 자기 주도형 튜토리얼을 만들 수 있습니다.</p>
+<p>R Markdown을 이용해서 대화형 코스를 만들 수 있다는 것은, 이네스 플랫폼보다 쉽게 온라인 코스를 만들 수 있다는 장점입니다. 이것은 코스를 만드는 과정이 이네스 플랫폼보다는 쉽다는 의미입니다.</p>
+<h3 id="learnr-코스의-특징과-장점">learnr 코스의 특징과 장점</h3>
+<h4 id="r-markdown-기반의-저작">R Markdown 기반의 저작</h4>
+<p>앞서 언급한 것처럼 <strong>R Markdown을 이용</strong>해서 대화형 코스를 만들 수 있다는 것은 장점 중의 하나입니다.</p>
+<h4 id="shiny-앱">shiny 앱</h4>
+<p>learnr 패키지로 만든 코스(learnr은 대화형 튜토리얼라 칭하지만 편의상 대화형 코스로 이야기하겠습니다.)는 <strong>shiny에서 구동</strong>됩니다. 그러므로 <strong>여러 수강자가 학습하는 환경을 위해서 배포하려면, shiny 서버에 배포</strong>해야 합니다.</p>
+<p>일반적으로 shiny 앱은 <a href="https://www.shinyapps.io/" target="_blank">shinyapps.io</a>에 배포합니다.</p>
+<p>shinyapps.io 서비스는 다음 가격 정책처럼 5개의 앱 안에서는 무료로 사용할 수 있습니다. 그리고 이 무료 정책은 한달에 25 액티브 시간의 제한이 있습니다. 그러므로 다수의 접속과 학습이 필요한 경우에는 유료 서비스를 사용할 수 있다는 것을 의미합니다.</p>
+<figure>
+<img src="img/price-shiny.png" style="width:100.0%;height:100.0%" alt="shinyapps.io의 가격 정책" /><figcaption aria-hidden="true">shinyapps.io의 가격 정책</figcaption>
+</figure>
+<p>업무상 shiny 앱을 개발한 적이 있어, <a href="https://shiny.rstudio.com/gallery/" target="_blank">https://shiny.rstudio.com/gallery/</a>에서 제공하는 Show cases, Demos, Widgets을 참고한 적이 있습니다. 이들 컨텐츠들은 shinyapps.io에서 구동되는데 로딩 시간이 지루하고 일정 시간 후에 세션이 끊기는 문제로, 얻는 정보와 반대급부로 불편한 환경의 경험이 있어서 shinyapps.io가 썩 끌리지는 않습니다.</p>
+<h4 id="학습-진도의-기억">학습 진도의 기억</h4>
+<p>learnr 코스의 장점은 수강자가 <strong>학습한 진도를 시스템 내부에서 자동으로 보존</strong>하므로, 나중에 다시 학습을 위해서 코스로 돌아오면 중단한 부분부터 다시 학습할 수 있다는 점입니다. 이네스의 플랫폼에서 제공하지 않는 유용한 기능입니다.</p>
+<h2 id="코스-컨텐츠-작성">코스 컨텐츠 작성</h2>
+<p>learnr 코스를 만드는 방법을, learnr 패키지가 제공하는 템플리토로 간단하게 소개합니다.</p>
+<h3 id="r-markdown-문서-생성">R Markdown 문서 생성</h3>
+<p>RStudio에서 File &gt; New File &gt; R Markdown… 메뉴를 선택하면 다음과 같은 다이얼로그 창이 나타납니다. 여기서 “From Template”를 선택 후, Template에서 learnr의 <strong>“Interactive Tutorial”을 선택</strong> 후 문서 이름을 정합니다.</p>
+<p><br></p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/dialog-learnr.png" width="70%" style="display: block; margin: auto;" /></p>
+</div>
+<p><br></p>
+<p>선택 후 “OK” 버튼을 누르면 다음과 같은 템플리트가 만들어집니다.</p>
+<figure>
+<img src="img/template-learnr.png" alt="Interactive Tutorial 템플리트" /><figcaption aria-hidden="true">Interactive Tutorial 템플리트</figcaption>
+</figure>
+<h3 id="yaml-헤더">YAML 헤더</h3>
+<p>learnr 코스의 YAML 헤더는 다음과 같습니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;Tutorial&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> learnr<span class="sc">::</span>tutorial</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>runtime<span class="sc">:</span> shiny_prerendered</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+</div>
+<p><strong>output</strong>은 <strong>learnr::tutorial</strong>이며, <strong>runtime</strong>은 <strong>shiny_prerendered</strong>을 지정합니다.</p>
+<h3 id="청크-옵션">청크 옵션</h3>
+<p>learnr 코스는 learnr 패키지를 사용하므로, R Markdown 문서의 도입부에서 learnr 패키지를 불러들여야 합니다.</p>
+<pre><code>```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```</code></pre>
+<h4 id="exercise-옵션">exercise 옵션</h4>
+<p>exercise 옵션은 연습문제를 위한 R Script 작성을 지원합니다.</p>
+<p><br></p>
+<div class="panelset">
+<section id="옵션-설명" class="panel-name panel">
+<h4 class="panel-name">옵션 설명</h4>
+<p>exercise 옵션 예시</p>
+<ul>
+<li>exercise = TRUE : exercise를 수행할 수 있는 UI/UX를 만들어 줍니다.</li>
+<li>exercise.lines = 5 : 5줄의 스크립트를 입력할 수 있는 영역을 확보하여 UI를 만듭니다.</li>
+</ul>
+</section>
+<section id="템플리트에서의-예제" class="panel-name panel">
+<h4 class="panel-name">템플리트에서의 예제</h4>
+<pre><code>## Topic 1
+
+### Exercise 
+
+*Here&#39;s a simple exercise with an empty code chunk provided for entering the answer.*
+
+Write the R code required to add two plus two:
+
+```{r two-plus-two, exercise=TRUE}
+
+```
+
+### Exercise with Code
+
+*Here&#39;s an exercise with some prepopulated code as well as `exercise.lines = 5` 
+to provide a bit more initial room to work.*
+
+Now write a function that adds any two numbers and then call it:
+
+```{r add-function, exercise=TRUE, exercise.lines = 5}
+add &lt;- function() {
+  
+}
+```</code></pre>
+</section>
+<section id="실행-결과" class="panel-name panel">
+<h4 class="panel-name">실행 결과</h4>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/learnr-exercise.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+</section>
+</div>
+<p><br></p>
+<h4 id="hint-옵션">hint 옵션</h4>
+<p>hint 옵션은 exercise 옵션과 함께 사용하여 연습문제에 힌트를 제공합니다. <strong>‘Hint’</strong> 버튼을 누르면 힌트 다이얼로그가 출력됩니다. ‘Copy to Clipboard’ 버튼을 누르면 힌트를 클립보드로 복사하여 사용할 수 있습니다.</p>
+<p><br></p>
+<div class="panelset">
+<section id="옵션-설명-1" class="panel-name panel">
+<h4 class="panel-name">옵션 설명</h4>
+<p>exercise 옵션 예시</p>
+<ul>
+<li>exercise.eval = TRUE :
+<ul>
+<li>exercise.eval 옵션의 기본값은 FALSE로, TRUE이면 exercise 청크의 R 스크립트를 실행합니다.</li>
+<li>FALSE이면, 청크의 코드는 실행되지 않고 연습문제 UI에만 출력됩니다.</li>
+</ul></li>
+<li>청크이름-hint : 앞에서 사용한 ‘청크이름’ 뒤에 ’-hint’를 붙여 청크를 만드면, 힌트 청크가 됩니다.
+<ul>
+<li>청크이름 ‘print-limit-hint’는 앞에서 정의한 ’print-limit’ 청크의 힌트 청크를 의미합니다.</li>
+</ul></li>
+</ul>
+</section>
+<section id="템플리트에서의-예제-1" class="panel-name panel">
+<h4 class="panel-name">템플리트에서의 예제</h4>
+<pre><code>## Topic 2
+
+### Exercise with Hint
+
+*Here&#39;s an exercise where the chunk is pre-evaluated via the `exercise.eval` 
+option (so the user can see the default output we&#39;d like them to customize). 
+We also add a &quot;hint&quot; to the correct solution via the chunk immediate below 
+labeled `print-limit-hint`.*
+
+Modify the following code to limit the number of rows printed to 5:
+
+```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
+mtcars
+```
+
+```{r print-limit-hint}
+head(mtcars)
+```
+</code></pre>
+</section>
+<section id="실행-결과-1" class="panel-name panel">
+<h4 class="panel-name">실행 결과</h4>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/learnr-hint.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+</section>
+</div>
+<h4 id="quiz-함수">quiz 함수</h4>
+<p>quiz는 청크 옵션이 아니라 함수입니다. <strong>quiz()</strong> 함수는 퀴즈를 만들어 줍니다. 그리고, <strong>question()</strong> 함수, <strong>answer()</strong> 함수와 함께 동작합니다.</p>
+<p><br></p>
+<div class="panelset">
+<section id="함수-설명" class="panel-name panel">
+<h4 class="panel-name">함수 설명</h4>
+<p>exercise 옵션 예시</p>
+<ul>
+<li>quiz() :
+<ul>
+<li>퀴즈임을 알려 줍니다.</li>
+</ul></li>
+<li>question() :
+<ul>
+<li>퀴즈의 질문을 정의하는 함수입니다.</li>
+</ul></li>
+<li>answer() :
+<ul>
+<li>퀴즈의 답안을 정의하는 함수입다.</li>
+<li>correct = TRUE를 지정하는 답안이 정답을 의미합니다.
+<ul>
+<li>correct = TRUE를 하나의 답안에 지정하면, 레디오 박스로</li>
+<li>correct = TRUE를 복수로 지정하면, 체크박스로 표현됩니다. (중복 선택)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="템플리트에서의-예제-2" class="panel-name panel">
+<h4 class="panel-name">템플리트에서의 예제</h4>
+<pre><code>### Quiz
+
+*You can include any number of single or multiple choice questions as a quiz. 
+Use the `question` function to define a question and the `quiz` function for 
+grouping multiple questions together.*
+
+Some questions to verify that you understand the purposes of various base and 
+recommended R packages:
+
+```{r quiz}
+quiz(
+  question(&quot;Which package contains functions for installing other R packages?&quot;,
+    answer(&quot;base&quot;),
+    answer(&quot;tools&quot;),
+    answer(&quot;utils&quot;, correct = TRUE),
+    answer(&quot;codetools&quot;)
+  ),
+  question(&quot;Which of the R packages listed below are used to create plots?&quot;,
+    answer(&quot;lattice&quot;, correct = TRUE),
+    answer(&quot;tools&quot;),
+    answer(&quot;stats&quot;),
+    answer(&quot;grid&quot;, correct = TRUE)
+  )
+)
+```
+</code></pre>
+</section>
+<section id="실행-결과-2" class="panel-name panel">
+<h4 class="panel-name">실행 결과</h4>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/learnr-quiz.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+</section>
+</div>
+<h2 id="결언">결언</h2>
+<p>learnr 플랫폼에 대해서 개괄적으로 살펴보았습니다.</p>
+<p>learnr은 R Markdown으로 간단하게 코스를 생성하기에 좋은 플랫폼입니다. <strong>이네스 코스 플랫폼을 소개하는 이 웹 페이지</strong>에서 <strong>참고로 유사 솔루션인 learnr을 다루었지만</strong>, 이 글을 읽고 <strong>많은 R 사용자가 learnr 코스를 개발하고 공유할 수 있는 기회가 되었으면 합니다.</strong></p>
+<h3 id="유용한-learnr-코스-소개">유용한 learnr 코스 소개</h3>
+<p><a href="https://rstudio.cloud/learn/primers" target="_blank">RStudio Primers(https://rstudio.cloud/learn/primers)</a>에는 learnr 플랫폼으로 만든 여러 유용한 코스가 많습니다. RStudio Cloud 환경에서 동작하는 코스들입니다. 이 사이트에서 유용한 코스를 학습하시고, learnr 플랫폼의 룩&amp;필과 동작을 이해해 보시기 바랍니다.</p>
+<h3 id="mybinder.org에서의-배포">mybinder.org에서의 배포</h3>
+<p>learnr 코스 shiny 앱을 <a href="https://www.shinyapps.io/" target="_blank">shinyapps.io</a>에 배포하지 않고, <a href="https://mybinder.org/" target="_blank">https://mybinder.org/</a>에 배포할 수도 있습니다. 일장 일단이 있지만, shinyapps.io의 대체재가 될 수 있으니 참고하시기 바랍니다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

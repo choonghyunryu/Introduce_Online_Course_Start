@@ -44,7 +44,7 @@ div(class = "preface",
 ```
 
 ## 코스 템플리트 설치하기
-이네스는 코스 플랫폼을 만들었고, R 강사를 위해서 **"Online course starter: R"**을 배포하고 있습니다. 일종의 코스 템플리트인 셈입니다.
+이네스는 코스 플랫폼을 만든 이네스는 R 강사를 위해서, **"Online course starter: R"**을 배포하고 있습니다. 일종의 이네스 코스 템플리트인 셈입니다.
 
 ### Online course starter: R 리파지토리 가져오기
 
@@ -58,7 +58,7 @@ knitr::include_graphics("img/course-starter-r.png")
 
 <br>
 
-이 버튼을 누르면 탬플리트를 가져와서 새로운 리파지토리를 생성하는 Github 사용자 영역의 웹 페이지로 이동합니다.
+이 버튼을 누르면 탬플리트를 가져다가, Github 사용자의 새로운 리파지토리를 생성하는 영역의 웹 페이지로 이동합니다.
 dlookr 패키지의 사용 방법을 강의하는 코스를 만들려고 합니다. 그래서 그림처럼 리파지토리의 이름을 "course-starter-dlookr"로 만들었습니다.
 
 <br>
@@ -154,7 +154,7 @@ npm install -g gatsby-cli
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Node.js를 설치하고 설치된 버전을 확인합니다. **npm**도 함께 설치되는데, 이건은 Node.js 패키지를 설치하고 관리하는 유틸리티입니다.
+Node.js를 설치하고 설치된 버전을 확인합니다. **npm**도 함께 설치되는데, 이것은 Node.js 패키지를 설치하고 관리하는 유틸리티입니다.
 
 ```{r, eval=FALSE, echo=TRUE}
 brew install node

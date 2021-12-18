@@ -2589,7 +2589,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h4>들어가기</h4>
 온라인 코스 실행해볼까요?!
 <br/>
-코스 플랫폼 템플리트는 템플리트일 뿐, 하나씩 만들어 넣어 내 코스를 생성해지요.
+코스 플랫폼 템플리트는 템플리트일 뿐, 하나씩 만들어 넣어 내 코스를 생성해야죠.
 <br/>
 만들고 실행해서 동작해보고, 또 다시 만들고 실행하고...
 <br/>
@@ -2597,7 +2597,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 </div>
 <h2 id="코스-템플리트-둘러보기">코스 템플리트 둘러보기</h2>
-<p>코스 플랫폼을 개발하기 위해서는 콘솔의 CLI(Command-line interface)에서의 작업이 필요합니다. 그러나 여기서는 별도의 터미널이 아닌 RStudio 안에서 모두 작업해보겠습니다.</p>
+<p>코스 플랫폼을 개발하기 위해서는 콘솔 CLI(Command-line interface)에서의 작업이 필요합니다. 그러나 여기서는 별도의 터미널이 아닌 RStudio 안에서 모두 작업해보겠습니다.</p>
 <h3 id="코스-플랫폼-프로젝트-구동">코스 플랫폼 프로젝트 구동</h3>
 <p>이네스는 코스 플랫폼 템플리트로 RStudio 프로젝트를 만들었습니다. 해당 프로젝트를 구동하면, 다음과 같은 화면을 볼 수 있습니다.</p>
 <p>에디터 창에 <strong>package.json</strong> 파일을 띄워 놓은 화면입니다.</p>
@@ -2626,7 +2626,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li>코스의 챕터별 컨텐츠를 정의하는 마크다운 문서 위치</li>
 </ul></li>
-<li>exercises (d) _ 코스의 연습문제를 정의하는 R 스크립트 파일 위치</li>
+<li>exercises (d)
+<ul>
+<li>코스의 연습문제를 정의하는 R 스크립트 파일 위치</li>
+</ul></li>
 <li>gatsby-browser.js
 <ul>
 <li>Gatsby 앱 브라우징 설정 파일</li>
@@ -2637,7 +2640,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul></li>
 <li>gatsby-node.js
 <ul>
-<li>Gatsby 앱 설정 파일</li>
+<li>Gatsby의 Node.js 설정 파일</li>
 </ul></li>
 <li>meta.json
 <ul>
@@ -2679,7 +2682,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="rstudio-프로젝트-환경-설정하기">RStudio 프로젝트 환경 설정하기</h2>
 <h3 id="node.js-패키지-설치하기">Node.js 패키지 설치하기</h3>
 <p>이네스가 배포한 템플리트로 만든 RStudio 프로젝트를 처음 구동한 후 Node.js 패키지를 설치합니다.</p>
-<p>운영체제 터미널 CLI 환경에서 설치해야 하지만, RStudio가 터미널을 지원하기 때문에 <strong>“Colsole”</strong> 패널의 <strong>“Terminal”</strong> 탭을 눌러 터미널을 엽니다. 그리고 다음의 명령을 입력합니다. 이미 앞에서 Node.js 패키지 설치 관리자인 npm을 설치했기 때문에 npm 명령어를 입력할 수 있습니다.</p>
+<p>운영체제 터미널 CLI 환경에서 설치해야 하지만, RStudio가 터미널을 지원하기 때문에 <strong>“Console”</strong> 패널의 <strong>“Terminal”</strong> 탭을 눌러 터미널을 엽니다. 그리고 다음의 명령을 입력합니다. 이미 앞에서 Node.js 패키지 설치 관리자인 npm을 설치했기 때문에 npm 명령어를 입력할 수 있습니다.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>npm install</span></code></pre></div>
 </div>
