@@ -459,7 +459,7 @@ theme.sass 파일에 --color-theme로 정의하는 색상을 변경하면 됩니
 ::: {.panelset}
 
 ::: {.panel}
-#### 변경 전 순번 색상
+#### 변경 전 순번/버튼 색상
 
 ```{r, eval=FALSE, echo=TRUE}
 --color-theme: #de7878
@@ -473,7 +473,7 @@ knitr::include_graphics("img/before-theme.png")
 :::
 
 ::: {.panel}
-#### 변경 후 순번 색상
+#### 변경 후 순번/버튼 색상
 
 ```{r, eval=FALSE, echo=TRUE}
 --color-theme: #0072bc 

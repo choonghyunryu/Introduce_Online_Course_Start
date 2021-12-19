@@ -48,7 +48,7 @@ learnr 코스 플랫폼이라 거창하게 명명했지만, 사실은 learnr 패
 ### learnr 패키지
 learnr는 R Markdown을 사용하여 대화형 튜토리얼(자습서)를 만드는 **R 패키지**입니다. 내러티브, 이미지, 비디오, 퀴즈 및 연습문제를 조합하여 R과 R 패키지 학습을 위한 자기 주도형 튜토리얼을 만들 수 있습니다.
 
-R Markdown을 이용해서 대화형 코스를 만들 수 있다는 것은, 이네스 플랫폼보다 쉽게 온라인 코스를 만들 수 있다는 장점입니다. 이것은 코스를 만드는 과정이 이네스 플랫폼보다는 쉽다는 의미입니다.
+**R Markdown을 이용**해서 대화형 코스를 만들 수 있다는 것은, **온라인 코스를 만드는 과정이 이네스 플랫폼보다 쉽다는 장점**입니다. 이네스 플랫폼은 직접 Markdown 문서로 컨텐츠를 만들어야합니다. 이네스 플랫폼은 경우에 따라서 R Markdown을 지원하지 않는 아쉬운 지점이 생기게 되기 때문입니다.
 
 ### learnr 코스의 특징과 장점
 
@@ -316,7 +316,7 @@ learnr은 R Markdown으로 간단하게 코스를 생성하기에 좋은 플랫�
 
 ### 유용한 learnr 코스 소개
 
-[RStudio Primers(https://rstudio.cloud/learn/primers)](https://rstudio.cloud/learn/primers){target="_blank"}에는 learnr 플랫폼으로 만든 여러 유용한 코스가 많습니다. RStudio Cloud 환경에서 동작하는 코스들입니다. 이 사이트에서 유용한 코스를 학습하시고, learnr 플랫폼의 룩&필과 동작을 이해해 보시기 바랍니다.
+[RStudio Primers(https://rstudio.cloud/learn/primers)](https://rstudio.cloud/learn/primers){target="_blank"}에는 learnr 플랫폼으로 만든 여러 유용한 코스가 많습니다. RStudio Cloud 환경에서 동작하는 코스들입니다. 이 사이트에서 유용한 코스를 학습하시고, learnr 플랫폼의 Look&Feal과 동작을 이해해 보시기 바랍니다.
 
 ### mybinder.org에서의 배포
 

@@ -231,7 +231,7 @@ id: 1
 
 <exercise id="2" title="Getting Started">
 
-Let's ask some questions about the slides. Whats the correct answer?
+Let''s ask some questions about the slides. Whats the correct answer?
 
 <choice>
 <opt text="Answer one">
